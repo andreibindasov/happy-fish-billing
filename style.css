@@ -82,7 +82,7 @@ html{
 
 .description{
     font-family: "Ruluko", sans-serif;
-    color: #a79a2d;
+    color: #e2e2de;
     font-size: 3.9rem;
     transform: translateY(-300%);
     font-style: italic;
@@ -92,7 +92,7 @@ html{
 
 .section-1-icons i{
     font-size: 21rem;
-    color: #a79a2d;
+    color: rgb(155, 123, 35);
     position: absolute;
     transform: translate(-50%, -50%) scale(0);
     text-shadow: .2rem .2rem .2rem #000;
