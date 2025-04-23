@@ -48,18 +48,21 @@ html{
     align-items: center;
     box-shadow: .2rem .2rem .2rem #000;
 }
-.navbar-link{
-    color: #aaa;
+.navbar-link {
     margin: 0 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: color .3s;
+    
 }
 
-.navbar-link:hover{
-    color: #fff;
+.navbar-link i{
+    color: #aaa !important;
+}
+.navbar-link:hover i{
+    color: #fff !important;
 }
 
 .navbar-link i{
@@ -67,10 +70,12 @@ html{
 }
 
 .navbar-link span{
+    color: #aaa !important;
     font-size: 2.4rem;
     font-weight: 900;
     letter-spacing: .5rem;
     margin-top: .5rem;
+    font-family: "Libre Franklin", sans-serif;;
 }
 
 .menu{
@@ -191,6 +196,8 @@ html{
 
 .card{
     width: 30rem;
+    height: 39vh;
+    margin-bottom: 6rem;
     background-color: #a79a2d;
     padding: 3rem;
     display: flex;
@@ -232,18 +239,35 @@ html{
 }
 
 .card-img{
-    width: 100%;
+    width: 6rem;
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+
 }
 
 .card-name{
+    margin-top: 3rem;
     font-family: "Ruluko", sans-serif;
-    font-size: 3rem;
+    font-size: 2.3rem;
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: .5rem;
     color: #111;
     margin: 2rem 0;
-    text-shadow: .15rem .15rem .15rem #000;
+    text-shadow: .1rem .1rem .3rem #000;
+}
+
+.card p{
+    font-size: 1.2rem;
+    color: #eee;
+    text-align: justify;
+    text-indent: 3rem;
+    letter-spacing: .1rem;
+    line-height: 1.5rem;
+    text-wrap:initial;
+    line-break: strict;
+    width: 100%;
 }
 
 .card-btn{
@@ -324,7 +348,7 @@ html{
     height: 80%;
 }
 .serve-link:hover::after{
-    width: 88%;
+    width: 93%;
 }
 
 
@@ -384,7 +408,7 @@ html{
 .serve-link:hover .serve-description{
     opacity: 1;
     visibility: visible;
-    transition: opacity 1s 1s;
+    transition: opacity .6s .3s;
 }
 
 .section-4{
@@ -456,6 +480,13 @@ html{
     color: #c29525;
     margin-right: 1rem;
     font-size: 3rem;
+}
+.copyright span img{
+    width: .6rem;
+    fill: #c29525 !important;
+    filter: invert(50%) sepia(100%) ; 
+    /*saturate(10%) hue-rotate(180deg)*/
+
 }
 
 
