@@ -1,6 +1,6 @@
 *{
     margin: 0;
-    padding: 0%;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
     outline: none;
@@ -35,9 +35,18 @@ html{
     font-style: normal;
 }
 
+.container{
+    display: block;
+    max-width: 1920px;
+    margin: auto;
+    position: relative;
+}
+
 /* Navbar */
 .navbar{
+    
     width: 100%;
+    max-width: 1920px;
     height: 15rem;
     background-color: #000;
     position: fixed;
@@ -47,6 +56,7 @@ html{
     justify-content: center;
     align-items: center;
     box-shadow: .2rem .2rem .2rem #000;
+    transition: top .4s .3s;
 }
 .navbar-link {
     margin: 0 4rem;
@@ -54,12 +64,10 @@ html{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    /* color: #aaa !important; */
     
-}
-
-.navbar-link i{
-    transition: color .3s;
-    color: #aaa !important;
+    opacity: 0;
+    transition: opacity .3s .1s;
 }
 .navbar-link:hover i{
     color: #fff !important;
@@ -67,29 +75,53 @@ html{
 
 .navbar-link i{
     font-size: 7rem;
-}
-
-.navbar-link span{
+    text-shadow: .2rem .2rem .2rem #000;
     color: #aaa !important;
+    transition: color .3s;
+
+    
+}
+.navbar-link span{
     font-size: 2.4rem;
     font-weight: 900;
     letter-spacing: .5rem;
     margin-top: .5rem;
-    font-family: "Libre Franklin", sans-serif;;
+    font-family: "Libre Franklin", sans-serif;
+    text-shadow: .2rem .2rem .2rem #000;
+
+    color: #aaa !important;
 }
+
+.change.navbar .navbar-link{
+    opacity: 1;
+}
+.change.navbar .navbar-link:nth-child(1){
+    transition: opacity .4s .5s;
+}
+.change.navbar .navbar-link:nth-child(2){
+    transition: opacity .4s .6s;
+}
+.change.navbar .navbar-link:nth-child(3){
+    transition: opacity .4s .7s;
+}
+.change.navbar .navbar-link:nth-child(4){
+    transition: opacity .4s .8s;
+}
+
+
 
 .menu{
     width: 4rem;
     height: 9rem;
     background-color: #000;
-    position: fixed;
+    position: absolute;
     top: 18rem;
     left: 5rem;
     border-radius: 30rem 30rem 15rem 15rem;
     box-shadow: .1rem .1rem .1rem #000, -.1rem -.1rem .1rem #000;
     cursor: pointer;
-    z-index: 9;
-    position: relative;
+    z-index: 99;
+    transition: top .4s .1s;
 }
 .menu::before{
     content: "";
@@ -100,14 +132,19 @@ html{
     top: -18rem;
     left: calc(50% - .3rem);
 }
+
+.menu.change{
+    top: 27rem;
+    transition: top .4s;
+}
+.navbar.change{
+    top: 0;
+    transition: top .4s .2s;
+}
+
 /*  */
 
-.container{
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
+
 
 .section-1{
     width: 100%;
@@ -117,11 +154,13 @@ html{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     position: relative;
 }
 .create {
-    position: relative;
+    position: absolute;
+    top: 3.9rem;
+    right: 25%;
     display: inline-block;
     background-image: url('images/happy-fish-logo-5.png');
     background-repeat: no-repeat;
@@ -150,41 +189,45 @@ html{
     text-transform: capitalize;
     letter-spacing: .9rem;
     text-shadow: .3rem .3rem .3rem #000 ;
-    transform: translateY(-100%);
+    /* transform: translateY(-100%); */
     user-select: none;
+    margin-top: 3rem;
 }
 
 .description{
     font-family: "Ruluko", sans-serif;
     color: #e2e2de;
     font-size: 3.9rem;
-    transform: translateY(-300%);
+    /* transform: translateY(-300%); */
     font-style: italic;
     text-shadow: .1rem .1rem .1rem #000 ;
     user-select: none;
+    margin-top: 3rem;
 }
-
-.section-1-icons i{
-    font-size: 21rem;
-    color: rgb(155, 123, 35);
-    position: absolute;
-    transform: translate(-50%, -50%) scale(0);
-    text-shadow: .2rem .2rem .2rem #000;
-    transition: transform .3s;
-}
-.section-1-icons i.change{
-    transform: translate(-50%, -50%) scale(1);
-    transition: transform .3s .3s;
-}
-
 .section-1 p{
     color: #eee;
     font-size: 1.8rem;
     font-style: italic;
     text-shadow: .1rem .1rem .1rem #000 ;
     text-align: center;
-    transform: translateY(-600%);
+    /* transform: translateY(-600%); */
+    margin: 3rem 0 6rem 0;
 }
+
+.section-1-icons i{
+    font-size: 21rem;
+    color: rgb(155, 123, 35);
+    position: absolute;
+    transform: translate(-50%, -10%) scale(0);
+    text-shadow: .2rem .2rem .2rem #000;
+    transition: transform .3s;
+}
+.section-1-icons i.change{
+    transform: translate(-50%, -10%) scale(1);
+    transition: transform .3s .3s;
+}
+
+
 
 .section-2{
     width: 100%;
@@ -212,7 +255,7 @@ html{
 
 .card{
     width: 30rem;
-    height: 39vh;
+    height: 45vh;
     margin-bottom: 6rem;
     background-color: #a79a2d;
     padding: 3rem;
@@ -275,12 +318,15 @@ html{
 }
 
 .card p{
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: #eee;
     text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    word-spacing: -0.05em;
     text-indent: 3rem;
     letter-spacing: .1rem;
-    line-height: 1.5rem;
+    line-height: 2.1rem;
     text-wrap:initial;
     line-break: strict;
     width: 100%;
@@ -414,6 +460,9 @@ html{
     font-size: 1.5rem;
     letter-spacing: .1rem;
     text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    word-spacing: -0.05em;
     text-indent: 1.5rem;
     color: whitesmoke;
     opacity: 0;
@@ -448,6 +497,19 @@ html{
 .section-4-paragraph{
     font-size: 1.5rem;
     color: #888;
+}
+.section-4-paragraph-2{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 1rem;
+    row-gap: .6rem;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+}
+.section-4-paragraph-2 i{
+    text-shadow: .2rem .2rem .2rem #000;
 }
 
 .signup-form{
@@ -503,6 +565,134 @@ html{
     filter: invert(50%) sepia(100%) ; 
     /*saturate(10%) hue-rotate(180deg)*/
 
+}
+
+@media (max-width:1400px){
+    html{
+        font-size: 50%;
+    }
+
+    .create{
+        top: -3rem;
+        right: 23%;
+    }
+
+    .serve{
+        margin-top: 4.5rem;
+    }
+    
+    .serve-link{
+        margin: 3rem 1rem;
+        
+    }
+    .serve-link i{
+        font-size: 9rem;
+    }
+    .serve-link:hover i{
+        font-size: 3.3rem;
+       
+    }
+    
+    .serve-link:hover .serve-img{
+        box-shadow: .6rem .6rem .1rem #b4b106, .9rem .9rem .1rem #2a703a, 1.2rem 1.2rem .1rem #b4b106, 1.5rem 1.5rem .1rem #2a703a;
+    }
+    
+    .serve-name{
+        left: 1.2rem;
+        font-size: 1.5rem;
+    }
+    
+    .serve-link:hover .serve-name{
+        width: 80%;
+        font-size: 1.2rem;
+        
+    }
+    
+    .serve-description{
+        bottom: 0;
+        left: 1.2rem;
+        width: 80%;
+    }
+    
+    
+    .section-4{
+        height: 39vh;
+        
+    }
+    
+}
+
+@media (max-width:1000px){
+    .navbar-link i{
+        font-size: 4.5rem;
+    }
+
+    .navbar-link span{
+        font-size: 1.8rem;
+    }
+    
+    .section-heading{
+        font-size: 9rem;
+        margin: 0 5rem;
+    }
+
+    .section-1-icons i{
+        font-size: 15rem;
+    }
+
+    .section-2 .section-heading, .section-3 .section-heading{
+        font-size: 4.5rem;
+        margin: 0 5rem;
+    }
+    
+    .create{
+        right: 13%;
+    }
+
+    .section-2, .section-3{
+        height: auto;
+    }
+
+    .cards-container{
+        flex-wrap: wrap;
+    }
+
+    .card{
+        height: auto;
+        margin: 5rem;
+    }
+    .card-btn{
+        margin-top: 1.5rem;
+    }
+
+    .serve{
+        margin-top: 3rem;
+    }
+
+    .serve-link{
+        margin: 6rem;
+        width: 33vw;
+    }
+    .serve-img{
+        width: 100%;
+        height: 27vh;
+    }
+    .serve-link i{
+        font-size: 6rem;
+    }
+    
+}
+
+@media(max-width:900px){
+    .serve{
+        flex-direction: column;
+    }
+    .serve-link{
+        width: 50%;
+    }
+    .serve-description{
+        top: 9rem;
+    }
 }
 
 

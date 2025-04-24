@@ -1,3 +1,9 @@
+document.querySelector('.menu').addEventListener('click', () => {
+    document.querySelectorAll('.target').forEach((i) => {
+        i.classList.toggle('change')
+    })
+})
+
 const icons = document.querySelectorAll('.section-1-icons i')
 let i = 1
 
@@ -16,3 +22,24 @@ setInterval(()=>{
     
 
 }, 1800)
+
+const menuItems = document.querySelectorAll('.navbar-link');
+
+menuItems.forEach(item => {
+    item.addEventListener('click', (event) => {
+        document.querySelectorAll('.target').forEach((i) => {
+            i.classList.toggle('change')
+        })
+      
+      event.preventDefault();
+      const targetId = item.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+  
+      targetElement.scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+
+   
+
+});
