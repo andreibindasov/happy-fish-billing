@@ -478,14 +478,42 @@ html{
 
 .section-4{
     width: 100%;
-    height: 30vh;
+    height: 36vh;
     background: #222;
     display: flex;
-    justify-content: space-around;
-    padding: 3rem 0;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 1rem 0;
     position: relative;
-    align-items: flex-start;
+    
 }
+
+.section-4-paragraph-2{
+    display: flex;
+    /* width: 100%; */
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-top: 1rem;
+    row-gap: .6rem;
+    font-size: 1.5rem;
+    letter-spacing: .15rem;
+}
+.section-4-paragraph-2 i{
+    text-shadow: .2rem .2rem .2rem #000;
+    font-size: 1.5rem;
+    color: #888;
+}
+
+.signup-div{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-top: 3rem;
+}
+
 .section-4-text{
     text-transform: uppercase;
 }
@@ -498,19 +526,7 @@ html{
     font-size: 1.5rem;
     color: #888;
 }
-.section-4-paragraph-2{
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: start;
-    margin-top: 1rem;
-    row-gap: .6rem;
-    font-size: 1.5rem;
-    letter-spacing: .15rem;
-}
-.section-4-paragraph-2 i{
-    text-shadow: .2rem .2rem .2rem #000;
-}
+
 
 .signup-form{
     display: flex;
@@ -579,12 +595,20 @@ html{
 
     .serve{
         margin-top: 4.5rem;
+        height: auto;
     }
     
     .serve-link{
-        margin: 3rem 1rem;
-        
+        margin: 3rem 6rem;
+        width: 36%;
+        height: 30vh;
     }
+
+    .serve-img{
+        width: 100%;
+        height: 100%;
+    }
+
     .serve-link i{
         font-size: 9rem;
     }
@@ -609,7 +633,7 @@ html{
     }
     
     .serve-description{
-        bottom: 0;
+        top: 36%;
         left: 1.2rem;
         width: 80%;
     }
@@ -675,7 +699,7 @@ html{
     }
     .serve-img{
         width: 100%;
-        height: 27vh;
+        height: 33vh;
     }
     .serve-link i{
         font-size: 6rem;
@@ -692,6 +716,38 @@ html{
     }
     .serve-description{
         top: 9rem;
+    }
+
+    .section-4{
+        height: 45rem;
+    }
+
+    /* .section-4-paragraph-2{
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        margin-top: 1rem;
+        row-gap: .6rem;
+        font-size: 1.5rem;
+        letter-spacing: .15rem;
+    }
+    .section-4-paragraph-2 i{
+        text-shadow: .2rem .2rem .2rem #000;
+        font-size: 1.5rem;
+        color: #888;
+    } */
+    
+    .signup-div{
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        justify-content: start;
+        align-items: start;
+        margin-top: 3rem;
+        row-gap: .6rem;
+        letter-spacing: .15rem;
     }
 }
 
