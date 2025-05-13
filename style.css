@@ -558,6 +558,7 @@ html{
 }
 
 .copyright{
+    display: none;
     position: absolute;
     /* font-family:  */
     font-size: 1.5rem;
